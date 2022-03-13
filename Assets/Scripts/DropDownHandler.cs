@@ -19,8 +19,8 @@ public class DropDownHandler : MonoBehaviour
     void DropdownValueChanged(Dropdown dropdown)
     {
 
-
-        Debug.Log(dropdown.captionText.text) ;
+        Debug.Log("User Selected");
+        Debug.Log(dropdown.captionText.text);
     }
 
 
