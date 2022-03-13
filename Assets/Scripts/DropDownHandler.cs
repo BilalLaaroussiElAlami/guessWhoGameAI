@@ -23,11 +23,14 @@ public class DropDownHandler : MonoBehaviour
        
     }
 
+  
 
     //wanneer de gebruiker een propery heeft gekozen
     void DropdownValueChanged(Dropdown dropdown)
     {
         string selectedProperty = dropdown.captionText.text;
+        int option = dropdown.value;
+        dropdown.options.RemoveAt(option); 
         ui.UserSelected(selectedProperty); 
 
     }
