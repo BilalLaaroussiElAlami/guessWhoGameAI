@@ -5,22 +5,31 @@ using UnityEngine.UI;
 
 public class DropDownHandler : MonoBehaviour
 {
+
+
+    public UI ui;
+  
     // Start is called before the first frame update
     void Start()
     {
-        Dropdown propertyDropDown =  GetComponent<Dropdown>();
+        GameObject uigameObject =  GameObject.Find("UI");
+        ui = uigameObject.GetComponent<UI>();
+
+        Dropdown propertyDropDown = this.gameObject.GetComponent<Dropdown>();
         propertyDropDown.onValueChanged.AddListener(delegate {
             DropdownValueChanged(propertyDropDown);
         });
+        
        
     }
+
 
     //wanneer de gebruiker een propery heeft gekozen
     void DropdownValueChanged(Dropdown dropdown)
     {
+        string selectedProperty = dropdown.captionText.text;
+        ui.UserSelected(selectedProperty); 
 
-        Debug.Log("User Selected");
-        Debug.Log(dropdown.captionText.text);
     }
 
 

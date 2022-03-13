@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    UIController uiController;
+    UI ui ;
 
     public Card targetCard;
     Card[] cards;
@@ -14,7 +14,7 @@ public class Level : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        uiController  = FindObjectOfType<UIController>();
+        ui  = FindObjectOfType<UI>();
         cards = FindObjectsOfType<Card>();
 
        // UserAsksAbout("kind");
@@ -22,7 +22,7 @@ public class Level : MonoBehaviour
 
   
 
-    void UserAsksAbout(string property)
+    public void UserAsksAbout(string property)
     {
         bool answer = hasProperty(property);
 
@@ -40,7 +40,7 @@ public class Level : MonoBehaviour
         */
 
        
-        uiController.FallCards(toEliminateCards); 
+        ui.FallCards(toEliminateCards); 
     }
 
 
